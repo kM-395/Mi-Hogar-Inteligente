@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ Mi Hogar Inteligente - ¡Tu Destino para Electrodomésticos Smart! ⚡</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Variables CSS para colores y tipografía */
+        :root {
+            --primary-color: #007bff; /* Azul vibrante */
+            --secondary-color: #6c757d; /* Gris para texto secundario */
+            --accent-color: #ffc107; /* Amarillo/naranja para CTAs y destacados */
+            --text-dark: #343a40; /* Negro casi para texto principal */
+            --text-light: #f8f9fa; /* Blanco roto para texto en fondos oscuros */
+            --bg-light: #f8f9fa; /* Fondo general de la página */
+            --bg-white: #ffffff; /* Fondo para tarjetas y secciones principales */
+            --border-color: #dee2e6; /* Color de borde ligero */
+            --shadow-light: 0 4px 10px rgba(0,0,0,0.08); /* Sombra ligera */
+            --shadow-medium: 0 8px 20px rgba(0,0,0,0.12); /* Sombra más pronunciada */
+            --background-page-color: #e6edf4; /* Color de fondo de la página relacionado con tecnología y hogar */
+        }
+
+        /* Reset básico y estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--background-page-color); /* Aplicamos el color de fondo aquí */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1280px; /* Ancho máximo similar al ejemplo */
+            margin: 0 auto;
+            padding: 0 20px; /* Padding a los lados para respirar */
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3; /* Oscurece el color al pasar el ratón */
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* CABECERA PRINCIPAL */
+        .main-header {
+            background-color: var(--bg-white);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            z-index: 1000; /* Asegura que esté encima de otros elementos */
+            position: relative; /* Para el z-index */
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+            gap: 15px; /* Espacio entre elementos */
+        }
+
+        /* ESTILO DEL LOGO DE TEXTO */
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2em; /* Tamaño atractivo para el logo de texto */
+            font-weight: 700;
+            color: var(--primary-color);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            line-height: 1; /* Elimina espacio extra */
+            display: inline-block; /* Para que el padding y margen funcionen bien */
+            padding: 5px 0;
+            margin: 0;
+            white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+        }
+
+        .logo-text span {
+            color: var(--accent-color); /* Color diferente para la "E" */
+        }
+
+
+        .search-bar {
+            display: flex;
+            flex-grow: 1; /* Permite que la barra de búsqueda ocupe el espacio disponible */
+            max-width: 600px;
+            margin: 0 20px; /* Espacio a los lados */
+        }
+
+        .search-bar input {
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 25px 0 0 25px; /* Bordes redondeados a la izquierda */
+            flex-grow: 1;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            border-color: var(--primary-color);
+        }
+
+        .search-bar button {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 10px 18px;
+            border-radius: 0 25px 25px 0; /* Bordes redondeados a la derecha */
+            font-size: 1rem;
+        }
+
+        .search-bar button:hover {
+            background-color: #0056b3;
+        }
+
+        .user-nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        .user-nav a {
+            display: flex;
+            align-items: center;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .user-nav .icon {
+            margin-right: 8px;
+            font-size: 1.2em; /* Puedes usar iconos de fuentes como FontAwesome */
+        }
+
+        /* BARRA DE NAVEGACIÓN PRINCIPAL */
+        .main-nav {
+            background-color: var(--bg-white);
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Alinea a la izquierda */
+        }
+
+        .all-categories-button {
+            background-color: #dc3545; /* Un rojo para "Todas las categorías" */
+            color: var(--text-light);
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 30px;
+        }
+
+        .all-categories-button:hover {
+            background-color: #c82333;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap; /* Envuelve los elementos si no hay espacio */
+        }
+
+        .main-nav a {
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 5px 0; /* Espacio para el hover */
+            position: relative;
+        }
+
+        .main-nav a::after { /* Efecto de subrayado al pasar el ratón */
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease-out;
+        }
+
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* SECCIÓN PRINCIPAL / HERO SECTION */
+        .hero-section {
+            background-color: var(--bg-white);
+            padding: 50px 0;
+            margin-top: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-medium);
+            overflow: hidden; /* Para contener las imágenes si sobresalen */
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr; /* Columna Izq, Centro (grande), Columna Der */
+            gap: 30px;
+            align-items: start; /* Alinea los elementos al inicio de su fila */
+        }
+
+        .hero-left, .hero-center, .hero-right {
+            padding: 20px;
+            background-color: var(--bg-white);
+            border-radius: 10px;
+            /* box-shadow: 0 2px 8px rgba(0,0,0,0.05); */ /* Opcional: para dar una leve profundidad individual */
+        }
+
+        /* Estilos de las imágenes dentro del Hero */
+        .hero-left > img:first-child, .hero-right .right-product-images img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: block; /* Elimina espacio extra debajo de la imagen */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .hero-left .hero-image-bottom img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px; /* Espacio superior */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+
+        .hero-left .product-features {
+            padding: 15px;
+            background-color: #e9f5ff; /* Fondo claro para características */
+            border-radius: 8px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .hero-left .product-features h2 {
+            font-size: 1.7em;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .hero-left .product-features p {
+            font-size: 1em;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        .hero-left .product-features .compatible {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-top: 10px;
+        }
+
+        /* Columna Central */
+        .hero-center {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px; /* Altura mínima para que el contenido central se vea bien */
+        }
+
+        .hero-center h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5em; /* Más grande y llamativo */
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.15); /* Sombra de texto suave */
+            line-height: 1.1;
+        }
+
+        .hero-center h3 {
+            font-size: 1.8em;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .hero-center .highlight {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-center .tech-info {
+            background-color: #f8f8f8; /* Fondo sutil para la info de tecnología */
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05); /* Sombra interna */
+        }
+
+        .hero-center .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap; /* Envuelve los iconos si no hay espacio */
+        }
+
+        .hero-center .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-center .tech-item img {
+            height: 70px; /* Tamaño de los iconos de tecnología */
+            margin-bottom: 8px;
+        }
+
+        .hero-center .tech-item span {
+            font-size: 0.95em;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            font-size: 1.6em;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: var(--shadow-medium);
+            letter-spacing: 1px;
+            margin-top: 20px; /* Espacio para el botón */
+        }
+
+        .cta-button:hover {
+            background-color: #e0a800; /* Un poco más oscuro */
+            transform: translateY(-5px) scale(1.02); /* Efecto más pronunciado */
+        }
+
+        .smart-home-logo {
+            height: 120px; /* Ajusta el tamaño de la casita */
+            margin-top: 30px; /* Espacio para la casita */
+        }
+
+        /* Columna Derecha */
+        .hero-right .app-download {
+            background-color: #17a2b8; /* Un color teal/cían para la sección de la app */
+            color: var(--text-light);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .hero-right .app-download p {
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            text-transform: uppercase;
+        }
+
+        .hero-right .app-download img {
+            max-width: 90%;
+            height: auto;
+            margin: 0 auto;
+            display: block; /* Para centrar la imagen */
+        }
+
+        .hero-right .right-product-images img {
+            width: 100%;
+            margin-bottom: 15px; /* Espacio entre las imágenes de la derecha */
+            height: 200px; /* Altura fija para que sean consistentes */
+            object-fit: cover; /* Recorta la imagen para cubrir el área */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .hero-right .product-brands {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 25px;
+            gap: 15px; /* Espacio entre los logos de marca */
+            flex-wrap: wrap; /* Permite que se envuelvan */
+        }
+
+        .hero-right .product-brands img {
+            height: 60px; /* Tamaño de los logos de marca */
+            max-width: 48%; /* Para que quepan dos por fila si se envuelven */
+            object-fit: contain;
+            margin: 0; /* Eliminar márgenes si ya hay gap */
+        }
+
+        /* SECCIÓN DE PRODUCTOS DESTACADOS / CATEGORÍAS */
+        .featured-products {
+            margin-top: 50px;
+            background-color: var(--bg-white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .featured-products h2 {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .product-category {
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed var(--border-color); /* Separador sutil */
+        }
+
+        .product-category:last-child {
+            border-bottom: none; /* Sin borde en la última categoría */
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .product-category h3 {
+            font-size: 2.2em;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas responsivas */
+            gap: 30px; /* Espacio entre los productos */
+        }
+
+        .product-item {
+            background-color: var(--bg-white);
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-item:hover {
+            transform: translateY(-8px); /* Elevación al pasar el ratón */
+            box-shadow: var(--shadow-medium);
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: 220px; /* Altura fija para las imágenes de producto */
+            object-fit: contain; /* Para que la imagen se ajuste sin cortarse */
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .product-item h4 {
+            font-size: 1.4em;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .product-item p {
+            font-size: 0.95em;
+            color: var(--secondary-color);
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        .product-item .price {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #28a745; /* Verde para el precio */
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .product-item .add-to-cart {
+            background-color: var(--accent-color);
+            color: var(--text-dark);
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .add-to-cart:hover {
+            background-color: #e0a800; /* Un poco más oscuro */
+        }
+
+        /* PIE DE PÁGINA */
+        .main-footer {
+            background-color: var(--text-dark); /* Color oscuro para el pie de página */
+            color: var(--text-light);
+            padding: 50px 0 30px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-column h4 {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-column ul {
+            margin-bottom: 20px;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: var(--text-light);
+            font-size: 0.95em;
+        }
+
+        .footer-column a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-column p {
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-icons img {
+            height: 35px; /* Tamaño de los iconos de redes sociales */
+            border-radius: 50%; /* Si quieres que sean circulares */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 25px;
+            font-size: 0.8em;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Media Queries para Responsividad */
+        @media (max-width: 1200px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1.5fr 1fr; /* Ajuste en pantallas más pequeñas */
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr; /* Una sola columna en pantallas medianas */
+            }
+            .hero-center {
+                order: -1; /* Mueve la sección central al principio en diseños de una columna */
+            }
+            .main-header .header-content,
+            .main-nav .nav-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            .search-bar {
+                width: 90%;
+                margin: 0 auto;
+            }
+            .user-nav ul, .main-nav ul {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+            .main-nav ul li {
+                width: 100%;
+            }
+            .main-nav a::after { /* Quita el efecto de subrayado en móviles si molesta */
+                display: none;
+            }
+            .all-categories-button {
+                width: 90%;
+            }
+            .hero-center h1 {
+                font-size: 2.8em;
+            }
+            .hero-center h3 {
+                font-size: 1.4em;
+            }
+            .cta-button {
+                font-size: 1.4em;
+                padding: 15px 30px;
+            }
+            .featured-products h2 {
+                font-size: 2.2em;
+            }
+            .product-category h3 {
+                font-size: 1.8em;
+            }
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .social-icons {
+                justify-content: center;
+            }
+            /* Ajuste del logo de texto para pantallas más pequeñas */
+            .logo-text {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            .hero-section {
+                padding: 30px 0;
+            }
+            .hero-center h1 {
+                font-size: 2.2em;
+            }
+            .hero-center h3 {
+                font-size: 1.1em;
+            }
+            .cta-button {
+                font-size: 1.2em;
+                padding: 10px 20px;
+            }
+            .hero-center .tech-icons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-center .tech-item img {
+                height: 50px;
+            }
+            .featured-products {
+                padding: 30px 15px;
+            }
+            .product-item img {
+                height: 180px; /* Ajuste para imágenes de producto en móviles */
+            }
+            /* Ajuste del logo de texto para pantallas más pequeñas */
+            .logo-text {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html" class="logo-text">Mi Hogar <span class="accent-text">Inteligente</span></a>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Busca tus electrodomésticos ideales...">
+                <button type="submit">🔍</button>
+            </div>
+
+            <nav class="user-nav">
+                <ul>
+                    <li><a href="#"><span class="icon">📞</span> Contáctanos</a></li>
+                    <li><a href="#"><span class="icon">👤</span> Mi cuenta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container nav-content">
+            <button class="all-categories-button">☰ Todas las categorías</button>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Marcas</a></li>
+                <li><a href="#">Novedades</a></li>
+                <li><a href="#">¿Cómo comprar?</a></li>
+                <li><a href="#">Nuestras sucursales</a></li>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-left">
+                <img src="https://i0.wp.com/tecnohogar.com.ec/wp-content/uploads/2024/08/MONT-3.png?fit=800%2C800&ssl=1" alt="Horno Smart con control de voz">
+                <div class="product-features">
+                    <h2>Control Total</h2>
+                    <p>Activa y ajusta funciones mediante comandos de voz</p>
+                    <p class="compatible">Compatible con asistentes de voz</p>
+                </div>
+                <div class="hero-image-bottom">
+                    <img src="https://www.teka.com/es-ec/wp-content/uploads/sites/20/2021/07/%C2%BFQue%CC%81-recipientes-usar-en-el-horno-y-cua%CC%81les-no-.jpg" alt="Preparación de alimentos en horno">
+                </div>
+            </div>
+
+            <div class="hero-center">
+                <h1>✨ Novedades en Cocinas Smart ✨</h1>
+                <h3>Desde tu celular, conecta, controla y sorprende</h3>
+                <div class="tech-info">
+                    <p class="highlight">HORNEADO RÁPIDO Y SALUDABLE</p>
+                    <div class="tech-icons">
+                        <div class="tech-item">
+                            <img src="https://i0.wp.com/tecnohogar.com.ec/wp-content/uploads/2024/08/MONT-1.png?fit=800%2C800&ssl=1" alt="Tecnología AirFryer">
+                            <span>Tecnología AirFryer</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://www.shutterstock.com/shutterstock/photos/2259382407/display_1500/stock-vector-air-fryer-badge-logo-design-suitable-for-product-label-and-technology-2259382407.jpg" alt="AirFry Logo">
+                            <span>AIR FRY</span>
+                        </div>
+                        <div class="tech-item">
+                            <img src="https://www.efe.com.pe/media/catalog/product/c/x/cx751inxxplus_10.jpg?quality=80&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700" alt="Horno Multifunción">
+                            <span>HORNO MULTIFUNCIÓN</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="cta-button">¡COMPRA AHORA!</button>
+                <img src="https://thumbs.dreamstime.com/b/print-165634803.jpg?w=768" alt="Smart Home Logo" class="smart-home-logo">
+            </div>
+
+            <div class="hero-right">
+                <div class="app-download">
+                    <p>DESCARGA LA APP</p>
+                    <img src="https://i0.wp.com/bodeguitadelahorro.com/wp-content/uploads/2025/04/Cocina-A-Gas-Indurama-Montecarlo-Smart-4.jpg?fit=800%2C800&ssl=1" alt="Descarga Indurama Living App">
+                    </div>
+                <div class="right-product-images">
+                    <img src="https://www.kitchencenter.cl/cdn/shop/products/12555_AMB_WEB11.jpg?v=1685409175&width=600" alt="Lavavajillas Smart">
+                    <img src="https://b2cindurama.vtexassets.com/arquivos/ids/158288-800-auto?v=638762691404600000&width=800&height=auto&aspect=true" alt="Cocina Smart">
+                </div>
+                <div class="product-brands">
+                    <img src="https://b2cindurama.vtexassets.com/arquivos/ids/158287-800-auto?v=638762691404470000&width=800&height=auto&aspect=true" alt="Montecarlos Brand">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="featured-products container">
+        <h2>Nuestros Electrodomésticos Destacados</h2>
+
+        <article class="product-category">
+            <h3>Cocinas Modernas</h3>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="https://prod-metro-markets.imgix.net/item_image/eb6baa5f-b68e-4b3b-8104-a02443da2535?auto=format,compress&w=393&q=50&dpr=2&ar=1:1&fill-color=00FFFFFF" alt="Cocina a gas moderna">
+                    <h4>Cocina de Inducción Smart</h4>
+                    <p>Control táctil, zonas de cocción flexibles, eficiencia energética.</p>
+                    <span class="price">$799.99</span>
+                    <button class="add-to-cart">Añadir al Carrito</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://b2cindurama.vtexassets.com/arquivos/ids/155917-800-auto?v=638805110113270000&width=800&height=auto&aspect=true" alt="Cocina eléctrica con horno">
+                    <h4>Cocina Eléctrica Multifunción</h4>
+                    <p>Horno autolimpiable, temporizador programable, seguridad infantil.</p>
+                    <span class="price">$649.99</span>
+                    <button class="add-to-cart">Añadir al Carrito</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://b2cindurama.vtexassets.com/arquivos/ids/158288-800-auto?v=638762691404600000&width=800&height=auto&aspect=true" alt="Cocina a gas con horno grande">
+                    <h4>Cocina a Gas Profesional</h4>
+                    <p>Quemadores de alta potencia, encendido electrónico, diseño robusto.</p>
+                    <span class="price">$899.99</span>
+                    <button class="add-to-cart">Añadir al Carrito</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://b2cindurama.vtexassets.com/arquivos/ids/157032-800-auto?v=638467086224030000&width=800&height=auto&aspect=true" alt="Estufa de sobremesa inducción">
+                    <h4>Estufa Portátil de Inducción</h4>
+                    <p>Compacta y potente, ideal para espacios pequeños, fácil de limpiar.</p>
+                    <span class="price">$199.99</span>
+                    <button class="add-to-cart">Añadir al Carrito</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-category">
+            <h3>Refrigeradoras Inteligentes</h3>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="https://b2cindurama.vtexassets.com/arquivos/ids/157636-800-auto?v=638572746230900000&width=800&height=auto&aspect=true" alt="Refrigeradora side by side">
+                    <h4>Refrigeradora Side by Side con Dispenser</h4>
+                    <p>Fábrica de hielo automática, pantalla táctil, conexión a Wi-Fi.</p>
+                    <span class="price">$1299.99</span>
+                    <button class="add-to-cart">Añadir al Carrito</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://b2cindurama.vtexassets.com/arquivos/ids/157631-800-auto?v=638572743237200000&width=800&height=auto&aspect=true" alt="Refrigeradora de dos puertas">
+                    <h4>Refrigeradora Top Freezer No Frost</h4>
+                    <p>Gran capacidad, tecnología No Frost, bajo consumo energético.</p>
+                    <span class="price">$899.99</span>
+                    <button class="add-to-cart">Añadir al Carrito</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://b2cindurama.vtexassets.com/arquivos/ids/157642-800-auto?v=638572750833430000&width=800&height=auto&aspect=true" alt="Refrigeradora con congelador inferior">
+                    <h4>Refrigeradora Bottom Freezer</h4>
+                    <p>Organización eficiente, cajón de verduras con control de humedad.</p>
+                    <span class="price">$999.99</span>
+                    <button class="add-to-cart">Añadir al Carrito</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://b2cindurama.vtexassets.com/arquivos/ids/157988-800-auto?v=638689126898130000&width=800&height=auto&aspect=true" alt="Minibar">
+                    <h4>Minibar Compacto</h4>
+                    <p>Ideal para oficinas o habitaciones, bajo ruido, puerta reversible.</p>
+                    <span class="price">$249.99</span>
+                    <button class="add-to-cart">Añadir al Carrito</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-category">
+            <h3>Lavadoras y Secadoras</h3>
+            <div class="product-grid">
+                <div class="product-item">
+                    <img src="https://b2cindurama.vtexassets.com/arquivos/ids/157645-800-auto?v=638580330005830000&width=800&height=auto&aspect=true" alt="Lavadora de carga frontal">
+                    <h4>Lavadora de Carga Frontal con Vapor</h4>
+                    <p>Elimina alérgenos, ciclos rápidos, ahorro de agua y energía.</p>
+                    <span class="price">$749.99</span>
+                    <button class="add-to-cart">Añadir al Carrito</button>
+                      </div>
+                <div class="product-item">
+                    <img src="https://b2cindurama.vtexassets.com/arquivos/ids/155480-800-auto?v=638095037719870000&width=800&height=auto&aspect=true" alt="Lavadora-Secadora combo">
+                    <h4>Centro de Lavado Integrado</h4>
+                    <p>Lava y seca en un solo aparato, ideal para espacios pequeños.</p>
+                    <span class="price">$1099.99</span>
+                    <button class="add-to-cart">Añadir al Carrito</button>
+                </div>
+                <div class="product-item">
+                    <img src="https://b2cindurama.vtexassets.com/arquivos/ids/157900-800-auto?v=638666938595870000&width=800&height=auto&aspect=true" alt="Lavadora de carga superior">
+                    <h4>Lavadora de Carga Superior Eco</h4>
+                    <p>Tecnología de lavado suave, programa rápido, gran durabilidad.</p>
+                    <span class="price">$589.99</span>
+                    <button class="add-to-cart">Añadir al Carrito</button>
+                </div>
+            </div>
+        </article>
+
+        </section>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h4>Sobre Nosotros</h4>
+                <ul>
+                    <li><a href="#">Nuestra Historia</a></li>
+                    <li><a href="#">Misión y Visión</a></li>
+                    <li><a href="#">Trabaja con Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Atención al Cliente</h4>
+                <ul>
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Política de Devoluciones</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Aviso de Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/30/5e/20/305e20b2-d15e-68ff-a3ea-b1264a00716a/Icon-Production-0-0-1x_U007epad-0-1-0-85-220.png/230x0w.webp" alt="Facebook"></a>
+                    <a href="#"><img src="https://1000marcas.net/wp-content/uploads/2019/11/Instagram-Logo.png" alt="Instagram"></a>
+                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/250px-Logo_of_Twitter.svg.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://www.vistazo.com/binrepository/512x250/0c0/0d0/none/12727/REXN/unnamed_VI139661_MG8536883.png" alt="YouTube"></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Contacto</h4>
+                <p>Dirección: Av. Principal y Calle villaroel, Centro Comercial, Riobamba, Ecuador</p>
+                <p>Teléfono: +593 99 123 4567</p>
+                <p>Email: info@mihogarinteligente.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Mi Hogar Inteligente. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
